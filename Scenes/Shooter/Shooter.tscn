@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://de51gl1axaodu"]
+
+[ext_resource type="Script" uid="uid://btcitsipqmwmi" path="res://Scenes/Shooter/Shooter.cs" id="1_081au"]
+
+[node name="Shooter" type="Node2D" node_paths=PackedStringArray("_sound", "_shootTimer")]
+script = ExtResource("1_081au")
+_sound = NodePath("Sound")
+_shootTimer = NodePath("ShootTimer")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]

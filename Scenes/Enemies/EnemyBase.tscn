@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqg840qcx4yiv"]
+
+[ext_resource type="Script" uid="uid://cjlqg3rlxat6n" path="res://Scenes/Enemies/EnemyBase.cs" id="1_iiq2q"]
+
+[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("_visibleOnScreenNotifier2D", "_animatedSprite2D", "_hitBox") groups=["Moveables"]]
+collision_layer = 0
+script = ExtResource("1_iiq2q")
+_visibleOnScreenNotifier2D = NodePath("VisibleOnScreenNotifier2D")
+_animatedSprite2D = NodePath("AnimatedSprite2D")
+_hitBox = NodePath("Hitbox")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]

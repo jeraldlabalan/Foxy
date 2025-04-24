@@ -1,0 +1,25 @@
+using Godot;
+using System;
+
+public partial class Frog : EnemyBase
+{
+	private bool _seenPlayer = false; // Flag to check if the player is seen
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		base._Ready(); // Call the base class ready method
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+
+	protected override void OnScreenEntered()
+	{
+	}
+
+	protected override void OnScreenExited()
+	{
+	}
+}
