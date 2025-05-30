@@ -5,15 +5,12 @@ public partial class LevelBase : Node2D
 {
     public override void _Process(double delta)
     {
-    //    if(Input.IsActionJustPressed("shoot"))
-    //    {
-    //      SignalManager.EmitOnCreateBullet(
-    //         new Vector2(100, -100), // Position
-    //         new Vector2(100, -100), // Direction
-    //         100.0f, // Speed
-    //         2.0f, // LifeSpan
-    //         (int)GameObjectType.BulletEnemy // GameObjectType
-    //     );
-    //    } 
+       if(Input.IsActionJustPressed("test"))
+       {
+         SignalManager.EmitOnCreateObject(
+            new Vector2(200, -100),
+            (int)GameObjectType.Explosion // GameObjectType
+        );
+       } 
     }
 }

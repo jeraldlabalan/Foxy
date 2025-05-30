@@ -1,0 +1,131 @@
+[gd_scene load_steps=6 format=3 uid="uid://1j010io6pnq0"]
+
+[ext_resource type="LabelSettings" uid="uid://b2dyrr3deoxuq" path="res://assets/LG_blue_64.tres" id="1_iteex"]
+[ext_resource type="Script" uid="uid://d05sh34vvv5kl" path="res://Scenes/Hud/Hud.cs" id="1_ysf55"]
+[ext_resource type="LabelSettings" uid="uid://c57087kb6t0iv" path="res://assets/LG_white_48.tres" id="2_xymhr"]
+[ext_resource type="LabelSettings" uid="uid://dwoj7dgthifc0" path="res://assets/LG_white_24.tres" id="3_xymhr"]
+[ext_resource type="Texture2D" uid="uid://cqmhxojxgie1a" path="res://assets/items/pixel heart 2.png" id="4_bbjj2"]
+
+[node name="Hud" type="Control" node_paths=PackedStringArray("_scoreLabel", "_hbHearts")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ysf55")
+_scoreLabel = NodePath("MarginContainer/ScoreLabel")
+_hbHearts = NodePath("MarginContainer/HBHearts")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.00392157, 0.0980392, 0.866667)
+
+[node name="VBComplete" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBComplete"]
+layout_mode = 2
+text = "LEVEL COMPLETED"
+label_settings = ExtResource("1_iteex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBComplete"]
+layout_mode = 2
+text = "Press Jump For Next Level"
+label_settings = ExtResource("2_xymhr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBgameOver" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBgameOver"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = ExtResource("1_iteex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBgameOver"]
+layout_mode = 2
+text = "Press Jump For Main Menu"
+label_settings = ExtResource("2_xymhr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0000"
+label_settings = ExtResource("3_xymhr")
+vertical_alignment = 1
+
+[node name="HBHearts" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBHearts"]
+layout_mode = 2
+texture = ExtResource("4_bbjj2")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBHearts"]
+layout_mode = 2
+texture = ExtResource("4_bbjj2")
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBHearts"]
+layout_mode = 2
+texture = ExtResource("4_bbjj2")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBHearts"]
+layout_mode = 2
+texture = ExtResource("4_bbjj2")
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/HBHearts"]
+layout_mode = 2
+texture = ExtResource("4_bbjj2")
+stretch_mode = 4
