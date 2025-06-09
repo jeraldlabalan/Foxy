@@ -44,7 +44,7 @@ public partial class Player : CharacterBody2D
 		_hurtTimer.Timeout += OnHurtTimerTimeout; // Connect the hurt timer timeout signal
 		_hitBox.AreaEntered += OnHitBoxAreaEntered; // Connect the hitbox area entered signal
 
-		SignalManager.EmitOnPlayerHit(_lives);
+		SignalManager.EmitOnLevelStart(_lives);
 	}
 
 
@@ -202,7 +202,8 @@ public partial class Player : CharacterBody2D
 		if (_lives <= 0)
 		{
 			SetPhysicsProcess(false); // Stop the physics process if lives are 0
-			GD.Print("Dead", _lives);
+			SignalManager.EmitOnGameOver();
+			
 			return false; // Return false if no lives left
 		}
 		return true; // Return true if lives are still available

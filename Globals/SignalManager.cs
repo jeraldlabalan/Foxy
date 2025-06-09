@@ -16,6 +16,9 @@ public partial class SignalManager : Node
     public delegate void OnPlayerHitEventHandler(int lives);
 
     [Signal]
+    public delegate void OnLevelStartEventHandler(int lives);
+
+    [Signal]
     public delegate void OnLevelCompleteEventHandler();
 
     [Signal]
@@ -60,6 +63,12 @@ public partial class SignalManager : Node
     {
         Instance.EmitSignal(SignalName.OnPlayerHit, lives);
     }
+
+    public static void EmitOnLevelStart(int lives)
+    {
+        Instance.EmitSignal(SignalName.OnLevelStart, lives);
+    }
+    
 
     public static void EmitOnLevelComplete()
     {

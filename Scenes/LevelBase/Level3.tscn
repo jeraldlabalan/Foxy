@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://mgxbgdoibcmw"]
+
+[ext_resource type="PackedScene" uid="uid://g68pxnrib32t" path="res://Scenes/LevelBase/LevelBase.tscn" id="1_oeok1"]
+[ext_resource type="PackedScene" uid="uid://b50o4usyxuokj" path="res://Scenes/Enemies/Snail/Snail.tscn" id="2_bmdap"]
+
+[node name="Level3" instance=ExtResource("1_oeok1")]
+
+[node name="Snail" parent="Enemies" index="0" instance=ExtResource("2_bmdap")]
+position = Vector2(344, -29)
+
+[node name="Snail2" parent="Enemies" index="1" instance=ExtResource("2_bmdap")]
+position = Vector2(518, -29)
+
+[node name="Snail3" parent="Enemies" index="2" instance=ExtResource("2_bmdap")]
+position = Vector2(984, -27)

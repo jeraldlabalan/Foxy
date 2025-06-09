@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://eihii5d8rwt"]
+
+[ext_resource type="Script" uid="uid://c42v56s7r0f2r" path="res://Scenes/HighscoreLabel/HighscoreLabel.cs" id="1_0eccd"]
+[ext_resource type="LabelSettings" uid="uid://dnyyx3pqq7fuh" path="res://assets/LG_blue_24.tres" id="1_1knjc"]
+[ext_resource type="LabelSettings" uid="uid://c2l1vrqxwhnl4" path="res://assets/LG_blue_18.tres" id="2_0eccd"]
+
+[node name="HighscoreLabel" type="VBoxContainer" node_paths=PackedStringArray("_scoreLabel", "_dateLabel")]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0eccd")
+_scoreLabel = NodePath("ScoreLabel")
+_dateLabel = NodePath("DateLabel")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 2
+text = "0000"
+label_settings = ExtResource("1_1knjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateLabel" type="Label" parent="."]
+layout_mode = 2
+text = "01/06/2025"
+label_settings = ExtResource("2_0eccd")
+horizontal_alignment = 1
+vertical_alignment = 1

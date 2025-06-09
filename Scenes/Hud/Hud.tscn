@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://1j010io6pnq0"]
+[gd_scene load_steps=7 format=3 uid="uid://1j010io6pnq0"]
 
 [ext_resource type="LabelSettings" uid="uid://b2dyrr3deoxuq" path="res://assets/LG_blue_64.tres" id="1_iteex"]
 [ext_resource type="Script" uid="uid://d05sh34vvv5kl" path="res://Scenes/Hud/Hud.cs" id="1_ysf55"]
 [ext_resource type="LabelSettings" uid="uid://c57087kb6t0iv" path="res://assets/LG_white_48.tres" id="2_xymhr"]
 [ext_resource type="LabelSettings" uid="uid://dwoj7dgthifc0" path="res://assets/LG_white_24.tres" id="3_xymhr"]
 [ext_resource type="Texture2D" uid="uid://cqmhxojxgie1a" path="res://assets/items/pixel heart 2.png" id="4_bbjj2"]
+[ext_resource type="AudioStream" uid="uid://cjw16ilafcxqo" path="res://assets/sound/game_over.ogg" id="6_ighhf"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("_scoreLabel", "_hbHearts")]
+[node name="Hud" type="Control" node_paths=PackedStringArray("_scoreLabel", "_hbHearts", "_colorRect", "_vbLevelComplete", "_vbGameOver", "_sound", "_continueTimer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +17,11 @@ grow_vertical = 2
 script = ExtResource("1_ysf55")
 _scoreLabel = NodePath("MarginContainer/ScoreLabel")
 _hbHearts = NodePath("MarginContainer/HBHearts")
+_colorRect = NodePath("ColorRect")
+_vbLevelComplete = NodePath("ColorRect/VBComplete")
+_vbGameOver = NodePath("ColorRect/VBgameOver")
+_sound = NodePath("Sound")
+_continueTimer = NodePath("ContinueTimer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -28,6 +34,7 @@ grow_vertical = 2
 color = Color(0, 0.00392157, 0.0980392, 0.866667)
 
 [node name="VBComplete" type="VBoxContainer" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,6 +63,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBgameOver" type="VBoxContainer" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,3 +137,9 @@ stretch_mode = 4
 layout_mode = 2
 texture = ExtResource("4_bbjj2")
 stretch_mode = 4
+
+[node name="ContinueTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ighhf")

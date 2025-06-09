@@ -43,13 +43,14 @@ public partial class Boss : Node2D
 
 	private void Die()
 	{
-		if(_hitTween != null)
+		if (_hitTween != null)
 		{
 			_hitTween.Kill(); // Stop any ongoing hit tween
 		}
-		
+
 		SignalManager.EmitOnBossKilled(_points); // Emit a signal when the boss dies
-		QueueFree(); // Remove the boss from the scene
+		CallDeferred(MethodName.QueueFree); // Ensure the node is removed from the scene tree after the current frame
+
 	}
 
 	private void TakeDamage()

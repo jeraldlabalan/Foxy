@@ -11,7 +11,7 @@ public partial class ScoreManager : Node
 
     private int _score = 0;
 
-    private List<GameScore> _scoresHistory = new ();
+    private List<GameScore> _scoresHistory = new();
 
     public List<GameScore> ScoresHistory => _scoresHistory;
 
@@ -99,5 +99,17 @@ public partial class ScoreManager : Node
     private void OnEnemyHit(int points, Vector2 _enemyPosition)
     {
         UpdateScore(points);
+    }
+
+    public static void SimulateAddingAndSavingSomeScores()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Instance._scoresHistory.Add(new GameScore
+            { Score = i, DateAchieved = DateTime.Now }
+            );
+        }
+
+        Instance.SaveScores();
     }
 }

@@ -163,7 +163,7 @@ _data = {
 &"invincible": SubResource("Animation_t26db")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_sprite2D", "_sound", "_animationPlayer", "_animationPlayerInv", "_hitBox", "_invincibleTimer", "_hurtTimer", "_debugLabel", "_shooter") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_sprite2D", "_sound", "_animationPlayer", "_animationPlayerInv", "_hitBox", "_invincibleTimer", "_hurtTimer", "_debugLabel", "_shooter") groups=["Moveables", "Player"]]
 position = Vector2(0, -1)
 collision_layer = 0
 script = ExtResource("1_ft8w5")
