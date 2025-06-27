@@ -5,8 +5,8 @@ public partial class Frog : EnemyBase
 {
 	private const float JUMP_MIN_TIME = 2.0f;
 	private const float JUMP_MAX_TIME = 3.0f;
-	private const float JUMP_VELOCITY_X = 100.0f;
-	private const float JUMP_VELOCITY_Y = 150.0f;
+	private const float JUMP_VELOCITY_X = 150.0f;
+	private const float JUMP_VELOCITY_Y = 300.0f;
 	private static readonly Vector2 JUMP_VELOCITY_R = new Vector2(JUMP_VELOCITY_X, -JUMP_VELOCITY_Y);
 	private static readonly Vector2 JUMP_VELOCITY_L = new Vector2(-JUMP_VELOCITY_X, -JUMP_VELOCITY_Y);	
 
